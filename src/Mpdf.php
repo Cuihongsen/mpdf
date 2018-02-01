@@ -9340,7 +9340,7 @@ class Mpdf implements \Psr\Log\LoggerAwareInterface
 					header('Content-Length: ' . strlen($this->buffer));
 				}
 
-				header('Content-Disposition: attachment; filename="' . $name . '"');
+				header('Content-Disposition: attachment; filename="' . $name . '"; filename*=utf-8' . "''" . rawurlencode($name));
 
 				echo $this->buffer;
 
